@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Projet 3</string>
+    <string name="debit_max">Débit max</string>
+    <string name="hnette">hnette:</string>
+    <string name="puissance">puissance:</string>
+    <string name="debit_turbine">A turbiner:</string>
+
 </resources>

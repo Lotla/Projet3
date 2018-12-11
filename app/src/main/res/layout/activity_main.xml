@@ -1,121 +1,649 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:orientation="vertical"
     android:layout_height="match_parent"
+    android:background="#c1eded"
     tools:context=".MainActivity">
 
-    <EditText
-        android:id="@+id/debit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:ems="10"
-        android:hint="Debit a repartir"
-        android:inputType="numberDecimal"
-        android:textSize="15dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/elevation"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:ems="10"
-        android:hint="Élévation en amont"
-        android:inputType="numberDecimal"
-        android:textSize="15dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/debit" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:id="@+id/scrollView"
+        android:orientation="vertical"
+        android:layout_above="@id/resoudre"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="90dp"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="20sp"
+                        android:text="Débit total (m^3/s)"/>
+
+                    <EditText
+                        android:id="@+id/debitTotal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rounded_edit_text"
+                        android:ems="10"
+                        android:inputType="numberDecimal"
+                        android:textSize="15dp"
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="20dp"
+                        android:text="Elevation amont (m)"/>
+
+                    <EditText
+                        android:id="@+id/elevationAmont"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rounded_edit_text"
+                        android:ems="10"
+                        android:inputType="numberDecimal"
+                        android:textSize="15dp" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="5dp"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="5dp">
+                        <TextView
+                            android:id="@+id/debitMax1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/debit_max"/>
+
+                        <EditText
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:background="@drawable/rounded_edit_text"
+                            android:ems="4"
+                            android:inputType="numberDecimal"
+                            android:textSize="15dp" />
+                    </LinearLayout>
+
+
+
+                        <ImageView
+                            android:id="@+id/imageTurbine1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="3dp"
+                            android:layout_gravity="center"
+                            app:srcCompat="@drawable/turbine"
+                            android:layout_marginLeft="5dp" />
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="5dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="Q1 m^3/s"/>
+
+                        <EditText
+                            android:layout_width="wrap_content"
+                            android:padding="7dp"
+                            android:id="@+id/Q1"
+                            android:ems="3"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/screen_edit_text"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="5dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="P1 MW"/>
+
+                        <EditText
+                            android:layout_width="wrap_content"
+                            android:padding="7dp"
+                            android:id="@+id/P1"
+                            android:ems="3"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/screen_edit_text"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="5dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="Hnette1 m"/>
+
+                        <EditText
+                            android:layout_width="wrap_content"
+                            android:padding="7dp"
+                            android:id="@+id/Hnette1"
+                            android:ems="3"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/screen_edit_text"/>
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="5dp"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="5dp">
+                        <TextView
+                            android:id="@+id/debitMax2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/debit_max"/>
+
+                        <EditText
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:background="@drawable/rounded_edit_text"
+                            android:ems="4"
+                            android:inputType="numberDecimal"
+                            android:textSize="15dp" />
+                    </LinearLayout>
+
+
+
+                    <ImageView
+                        android:id="@+id/imageTurbine2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="3dp"
+                        android:layout_gravity="center"
+                        app:srcCompat="@drawable/turbine"
+                        android:layout_marginLeft="5dp" />
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="5dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="Q2 m^3/s"/>
+
+                        <EditText
+                            android:layout_width="wrap_content"
+                            android:padding="7dp"
+                            android:id="@+id/Q2"
+                            android:ems="3"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/screen_edit_text"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="5dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="P2 MW"/>
+
+                        <EditText
+                            android:layout_width="wrap_content"
+                            android:padding="7dp"
+                            android:id="@+id/P2"
+                            android:ems="3"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/screen_edit_text"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="5dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="Hnette2 m"/>
+
+                        <EditText
+                            android:layout_width="wrap_content"
+                            android:padding="7dp"
+                            android:id="@+id/Hnette2"
+                            android:ems="3"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/screen_edit_text"/>
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="5dp"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="5dp">
+                        <TextView
+                            android:id="@+id/debitMax3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/debit_max"/>
+
+                        <EditText
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:background="@drawable/rounded_edit_text"
+                            android:ems="4"
+                            android:inputType="numberDecimal"
+                            android:textSize="15dp" />
+                    </LinearLayout>
+
+
+
+                    <ImageView
+                        android:id="@+id/imageTurbine3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="3dp"
+                        android:layout_gravity="center"
+                        app:srcCompat="@drawable/turbine"
+                        android:layout_marginLeft="5dp" />
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="5dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="Q3 m^3/s"/>
+
+                        <EditText
+                            android:layout_width="wrap_content"
+                            android:padding="7dp"
+                            android:id="@+id/Q3"
+                            android:ems="3"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/screen_edit_text"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="5dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="P3 MW"/>
+
+                        <EditText
+                            android:layout_width="wrap_content"
+                            android:padding="7dp"
+                            android:id="@+id/P3"
+                            android:ems="3"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/screen_edit_text"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="5dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="Hnette3 m"/>
+
+                        <EditText
+                            android:layout_width="wrap_content"
+                            android:padding="7dp"
+                            android:id="@+id/Hnette3"
+                            android:ems="3"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/screen_edit_text"/>
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="5dp"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="5dp">
+                        <TextView
+                            android:id="@+id/debitMax4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/debit_max"/>
+
+                        <EditText
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:background="@drawable/rounded_edit_text"
+                            android:ems="4"
+                            android:inputType="numberDecimal"
+                            android:textSize="15dp" />
+                    </LinearLayout>
+
+
+
+                    <ImageView
+                        android:id="@+id/imageTurbine4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="3dp"
+                        android:layout_gravity="center"
+                        app:srcCompat="@drawable/turbine"
+                        android:layout_marginLeft="5dp" />
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="5dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="Q4 m^3/s"/>
+
+                        <EditText
+                            android:layout_width="wrap_content"
+                            android:padding="7dp"
+                            android:id="@+id/Q4"
+                            android:ems="3"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/screen_edit_text"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="5dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="P4 MW"/>
+
+                        <EditText
+                            android:layout_width="wrap_content"
+                            android:padding="7dp"
+                            android:id="@+id/P4"
+                            android:ems="3"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/screen_edit_text"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="5dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="Hnette1 m"/>
+
+                        <EditText
+                            android:layout_width="wrap_content"
+                            android:padding="7dp"
+                            android:id="@+id/Hnette4"
+                            android:ems="3"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/screen_edit_text"/>
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="5dp"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="5dp">
+                        <TextView
+                            android:id="@+id/debitMax5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/debit_max"/>
+
+                        <EditText
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:background="@drawable/rounded_edit_text"
+                            android:ems="4"
+                            android:inputType="numberDecimal"
+                            android:textSize="15dp" />
+                    </LinearLayout>
+
+
+
+                    <ImageView
+                        android:id="@+id/imageTurbine5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="3dp"
+                        android:layout_gravity="center"
+                        app:srcCompat="@drawable/turbine"
+                        android:layout_marginLeft="5dp" />
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="5dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="Q5 m^3/s"/>
+
+                        <EditText
+                            android:layout_width="wrap_content"
+                            android:padding="7dp"
+                            android:id="@+id/Q5"
+                            android:ems="3"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/screen_edit_text"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="5dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="P5 MW"/>
+
+                        <EditText
+                            android:layout_width="wrap_content"
+                            android:padding="7dp"
+                            android:id="@+id/P5"
+                            android:ems="3"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/screen_edit_text"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:orientation="vertical"
+                        android:layout_marginLeft="5dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="Hnette1 m"/>
+
+                        <EditText
+                            android:layout_width="wrap_content"
+                            android:padding="7dp"
+                            android:id="@+id/Hnette5"
+                            android:ems="3"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/screen_edit_text"/>
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+    </ScrollView>
+
 
     <Button
         android:id="@+id/resoudre"
-        android:layout_width="376dp"
-        android:layout_height="37dp"
-        android:layout_marginBottom="4dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
         android:text="Résoudre"
-        android:textSize="15dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:textSize="20sp" />
 
-    <ImageView
-        android:id="@+id/imageTurbine1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginLeft="36dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.498"
-        app:srcCompat="@drawable/turbine" />
 
-    <ImageView
-        android:id="@+id/imageTurbine2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="160dp"
-        android:layout_marginRight="160dp"
-        android:layout_marginBottom="220dp"
-        app:layout_constraintBottom_toBottomOf="@+id/resoudre"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/turbine" />
 
-    <ImageView
-        android:id="@+id/imageTurbine3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="40dp"
-        android:layout_marginRight="40dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.498"
-        app:srcCompat="@drawable/turbine" />
 
-    <ImageView
-        android:id="@+id/imageTurbine4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="96dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.328"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/turbine" />
-
-    <ImageView
-        android:id="@+id/imageTurbine5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="96dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.828"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/turbine" />
-
-</android.support.constraint.ConstraintLayout>
+</RelativeLayout>
