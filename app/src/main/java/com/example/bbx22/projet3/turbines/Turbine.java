@@ -21,7 +21,7 @@ public abstract class Turbine {
 
     }
 
-    protected double CalculHauteurDeChuteNette(double elevation_amont, double Sn, double Qtot)
+    public double CalculHauteurDeChuteNette(double elevation_amont, double Sn, double Qtot)
     {
 
         return elevation_amont - CalculElevation_aval_en_fonction_du_debit_total(Qtot) - 0.5*pow(10,-5)*pow(Sn,2);    //Eam-Eav(Qtot)-0.5e^-5*Q^2
