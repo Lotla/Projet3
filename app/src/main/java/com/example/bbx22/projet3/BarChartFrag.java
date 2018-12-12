@@ -1,5 +1,6 @@
 package com.example.bbx22.projet3;
 
+import android.content.Context;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
@@ -7,6 +8,7 @@ import androidx.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -45,11 +47,14 @@ public class BarChartFrag extends SimpleFragment implements OnChartGestureListen
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
         }
+
     }
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_bar_chart, container, false);
+        View view = inflater.inflate(R.layout.fragment_bar_chart, container, false);
+
+
 
         // create a new chart object
         chart = new BarChart(getActivity());
@@ -100,10 +105,28 @@ public class BarChartFrag extends SimpleFragment implements OnChartGestureListen
         xAxis.setEnabled(false);
 
         // programmatically add the chart
-        FrameLayout parent = v.findViewById(R.id.parentLayout);
+        FrameLayout parent = view.findViewById(R.id.parentLayout);
         parent.addView(chart);
 
-        return v;
+        view.setFocusableInTouchMode(true);
+        view.requestFocus();
+        final Fragment me = this;
+        view.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+
+                if( keyCode == KeyEvent.KEYCODE_BACK && event.getAction() == KeyEvent.ACTION_UP) {
+
+                    ((resultat)getActivity()).scrollView.setVisibility(View.VISIBLE);
+                    ((resultat)getActivity()).resoudre.setVisibility(View.VISIBLE);
+                    ((resultat)getActivity()).removeFragment(me);
+                    return true;
+                }
+                return false;
+            }
+        });
+
+        return view;
     }
 
     @Override
@@ -146,5 +169,7 @@ public class BarChartFrag extends SimpleFragment implements OnChartGestureListen
     public void onChartTranslate(MotionEvent me, float dX, float dY) {
         Log.i("Translate / Move", "dX: " + dX + ", dY: " + dY);
     }
+
+
 
 }

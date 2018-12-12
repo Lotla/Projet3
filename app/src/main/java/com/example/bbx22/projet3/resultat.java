@@ -17,14 +17,14 @@ import java.util.Collections;
 
 public class resultat extends BaseActivity {
 
-    private Button resoudre;
+    public Button resoudre;
     private Fragment fragmentBar;
     private Button dataP1;
     private Button dataP2;
     private Button dataP3;
     private Button dataP4;
     private Button dataP5;
-    private ScrollView scrollView;
+    public ScrollView scrollView;
     private ImageView imageTurbine1;
     private ImageView imageTurbine2;
     private ImageView imageTurbine3;
@@ -394,6 +394,23 @@ public class resultat extends BaseActivity {
             getSupportFragmentManager().beginTransaction()
                     .replace(R.id.activity_main_frame_layout, fragment).commit();
         }
+    }
+
+
+    public void removeFragment(Fragment fragment){
+        android.support.v4.app.FragmentManager fragmentManager = getSupportFragmentManager();
+        android.support.v4.app.FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+        fragmentTransaction.remove(fragment);
+        fragmentTransaction.commit();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        scrollView.setVisibility(View.VISIBLE);
+        resoudre.setVisibility(View.VISIBLE);
+
     }
 }
 

@@ -10,22 +10,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        tools:ignore="GoogleAppIndexingWarning"
-        >
-        <activity android:name=".MainActivity">
-
+        tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".MainActivity"></activity>
+        <activity
+            android:name=".resultat"
+            android:label="Résultat de l&apos;optimisation">
 
         </activity>
-        <activity
-            android:label="Résultat de l'optimisation"
-            android:name="resultat">
-
+        <activity android:name=".StartActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
     </application>
 
