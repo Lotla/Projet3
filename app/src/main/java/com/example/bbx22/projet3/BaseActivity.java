@@ -98,8 +98,6 @@ abstract class BaseActivity extends AppCompatActivity {
 
         // debut de la programmation dynamique
 
-
-
         for (int n = 0; n < Qtot.length; n++) {
 
             Q1 = 0.0;
@@ -128,7 +126,7 @@ abstract class BaseActivity extends AppCompatActivity {
             }
 
             // remplir Xn[]
-            for (int i = 0; i <= 160 / 5; i++)    // 160/5=32
+            for (int i = 0; i <= Qtot[n] / 5; i++)    // 160/5=32
             {
                 Xn.add(5 * i);
 
@@ -237,8 +235,11 @@ abstract class BaseActivity extends AppCompatActivity {
 
                     Q[l] = handleTurbines(indiceTurbines).X_n.get(handleTurbines(indiceTurbines).X_n.size() - 1);
 
-                    if (Q[l] > handleDebitMax(indiceTurbines))
-                        Q[l]  = handleDebitMax(indiceTurbines);
+                    if (handleDebitMax(indiceTurbines) != -1){
+                        if (Q[l] > handleDebitMax(indiceTurbines))
+                            Q[l]  = handleDebitMax(indiceTurbines);
+                    }
+
 
                     handleP(indiceTurbines)[n] = handlePuissance(indiceTurbines, Q[l], turbine1.CalculHauteurDeChuteNette(Eam[n], handleTurbines(indiceTurbines).X_n.get(handleTurbines(indiceTurbines).X_n.size() - 1), Qtot[n]));
                     Hnette[l] = turbine1.CalculHauteurDeChuteNette(Eam[n], handleTurbines(indiceTurbines).X_n.get(handleTurbines(indiceTurbines).X_n.size() - 1), Qtot[n]);
@@ -250,8 +251,10 @@ abstract class BaseActivity extends AppCompatActivity {
 
                     Q[l] = handleTurbines(indiceTurbines).X_n.get(rang / 5);
 
-                    if (Q[l] > handleDebitMax(indiceTurbines))
-                        Q[l]  = handleDebitMax(indiceTurbines);
+                    if (handleDebitMax(indiceTurbines) != -1){
+                        if (Q[l] > handleDebitMax(indiceTurbines))
+                            Q[l]  = handleDebitMax(indiceTurbines);
+                    }
 
 
                     Hnette[l] = handleTurbines(indiceTurbines).CalculHauteurDeChuteNette(Eam[n], Q[l], Qtot[n]);
@@ -401,18 +404,40 @@ abstract class BaseActivity extends AppCompatActivity {
 
         switch (position){
             case 1 :
-                return Integer.parseInt(textDebitMax1.getText().toString());
+
+                try{
+                    return Integer.parseInt(textDebitMax1.getText().toString());
+                }catch (Exception e){
+
+                }
+
             case 2 :
-                return Integer.parseInt(textDebitMax2.getText().toString());
+                try{
+                    return Integer.parseInt(textDebitMax2.getText().toString());
+                }catch (Exception e){
+
+                }
             case 3 :
-                return Integer.parseInt(textDebitMax3.getText().toString());
+                try{
+                    return Integer.parseInt(textDebitMax3.getText().toString());
+                }catch (Exception e){
+
+                }
             case 4:
-                return Integer.parseInt(textDebitMax4.getText().toString());
+                try{
+                    return Integer.parseInt(textDebitMax4.getText().toString());
+                }catch (Exception e){
+
+                }
             case 5:
-               return  Integer.parseInt(textDebitMax5.getText().toString());
+                try{
+                    return Integer.parseInt(textDebitMax5.getText().toString());
+                }catch (Exception e){
+
+                }
         }
 
-        return 0;
+        return -1;
     }
 
 
