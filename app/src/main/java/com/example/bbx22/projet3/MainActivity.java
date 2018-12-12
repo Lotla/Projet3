@@ -29,15 +29,20 @@ import java.util.List;
 
 public class MainActivity extends BaseActivity {
 
-
-
-
-
+    private Button resoudre;
+    private ImageView imageTurbine1;
+    private ImageView imageTurbine2;
+    private ImageView imageTurbine3;
+    private ImageView imageTurbine4;
+    private ImageView imageTurbine5;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        turbinesSelected = new ArrayList<>();
+
 
         //Selectionner les turbines par defaut
 
@@ -181,7 +186,7 @@ public class MainActivity extends BaseActivity {
 
 
 
-    public void disableTurbine1(){
+    private void disableTurbine1(){
 
         imageTurbine1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -229,7 +234,7 @@ public class MainActivity extends BaseActivity {
 
     }
 
-    public void disableTurbine2(){
+    private void disableTurbine2(){
 
         imageTurbine2.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -278,7 +283,7 @@ public class MainActivity extends BaseActivity {
 
     }
 
-    public void disableTurbine3(){
+    private void disableTurbine3(){
 
         imageTurbine3.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -324,7 +329,7 @@ public class MainActivity extends BaseActivity {
         });
 
     }
-    public void disableTurbine5(){
+    private void disableTurbine5(){
 
         imageTurbine5.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -370,7 +375,7 @@ public class MainActivity extends BaseActivity {
         });
 
     }
-    public void disableTurbine4(){
+    private void disableTurbine4(){
 
         imageTurbine4.setOnClickListener(new View.OnClickListener() {
             @Override

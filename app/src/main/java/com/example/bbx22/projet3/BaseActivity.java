@@ -55,13 +55,9 @@ abstract class BaseActivity extends AppCompatActivity {
     int Q [] = new int[5];
     double Hnette [] = new double[5];
 
-    ImageView imageTurbine1;
-    ImageView imageTurbine2;
-    ImageView imageTurbine3;
-    ImageView imageTurbine4;
-    ImageView imageTurbine5;
 
-    Button resoudre;
+
+
 
     EditText textDebitTotal;
     EditText textElevationAmont;

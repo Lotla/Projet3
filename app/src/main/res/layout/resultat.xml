@@ -1,22 +1,365 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent"
+        tools:context=".resultat">
 
-    <EditText
-        android:id="@+id/editText"
-        android:layout_width="291dp"
-        android:layout_height="46dp"
-        android:layout_marginTop="120dp"
-        android:layout_marginBottom="345dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="AFFICHAGE DES RESULTATS"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.505"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</android.support.constraint.ConstraintLayout>
+        <FrameLayout
+            android:id="@+id/activity_main_frame_layout"
+            android:layout_width="match_parent"
+            android:background="#c1eded"
+            android:layout_height="match_parent"></FrameLayout>
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:id="@+id/scrollView"
+            android:orientation="vertical"
+            android:layout_above="@id/resoudre"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="100dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="5dp"
+                            android:orientation="vertical"
+                            android:layout_marginLeft="5dp">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="@string/debit_max"/>
+
+                            <EditText
+                                android:id="@+id/debitMax1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:background="@drawable/rounded_edit_text"
+                                android:ems="4"
+                                android:inputType="numberDecimal"
+                                android:textSize="15dp" />
+                        </LinearLayout>
+
+
+
+                        <ImageView
+                            android:id="@+id/imageTurbine1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="3dp"
+                            android:layout_gravity="center"
+                            app:srcCompat="@drawable/turbine"
+                            android:layout_marginLeft="5dp" />
+
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginStart="60dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="60dp">
+
+                            <Button
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Graphique P1"
+                                android:id="@+id/visualizeP1Btn"/>
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="5dp"
+                            android:orientation="vertical"
+                            android:layout_marginLeft="5dp">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="@string/debit_max"/>
+
+                            <EditText
+                                android:id="@+id/debitMax2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:background="@drawable/rounded_edit_text"
+                                android:ems="4"
+                                android:inputType="numberDecimal"
+                                android:textSize="15dp" />
+                        </LinearLayout>
+
+
+
+                        <ImageView
+                            android:id="@+id/imageTurbine2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="3dp"
+                            android:layout_gravity="center"
+                            app:srcCompat="@drawable/turbine"
+                            android:layout_marginLeft="5dp" />
+
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginStart="60dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="60dp">
+
+                            <Button
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Graphique P2"
+                                android:id="@+id/visualizeP2Btn"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="5dp"
+                            android:orientation="vertical"
+                            android:layout_marginLeft="5dp">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="@string/debit_max"/>
+
+                            <EditText
+                                android:id="@+id/debitMax3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:background="@drawable/rounded_edit_text"
+                                android:ems="4"
+                                android:inputType="numberDecimal"
+                                android:textSize="15dp" />
+                        </LinearLayout>
+
+
+
+                        <ImageView
+                            android:id="@+id/imageTurbine3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="3dp"
+                            android:layout_gravity="center"
+                            app:srcCompat="@drawable/turbine"
+                            android:layout_marginLeft="5dp" />
+
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginStart="60dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="60dp">
+
+                            <Button
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Graphique P3"
+                                android:id="@+id/visualizeP3Btn"/>
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="5dp"
+                            android:orientation="vertical"
+                            android:layout_marginLeft="5dp">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="@string/debit_max"/>
+
+                            <EditText
+                                android:id="@+id/debitMax4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:background="@drawable/rounded_edit_text"
+                                android:ems="4"
+                                android:inputType="numberDecimal"
+                                android:textSize="15dp" />
+                        </LinearLayout>
+
+
+
+                        <ImageView
+                            android:id="@+id/imageTurbine4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="3dp"
+                            android:layout_gravity="center"
+                            app:srcCompat="@drawable/turbine"
+                            android:layout_marginLeft="5dp" />
+
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginStart="60dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="60dp">
+
+                            <Button
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Graphique P4"
+                                android:id="@+id/visualizeP4Btn"/>
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="5dp"
+                            android:orientation="vertical"
+                            android:layout_marginLeft="5dp">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="@string/debit_max"/>
+
+                            <EditText
+                                android:id="@+id/debitMax5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:background="@drawable/rounded_edit_text"
+                                android:ems="4"
+                                android:inputType="numberDecimal"
+                                android:textSize="15dp" />
+                        </LinearLayout>
+
+
+
+                        <ImageView
+                            android:id="@+id/imageTurbine5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="3dp"
+                            android:layout_gravity="center"
+                            app:srcCompat="@drawable/turbine"
+                            android:layout_marginLeft="5dp" />
+
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginStart="60dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="60dp">
+
+                            <Button
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Graphique P5"
+                                android:id="@+id/visualizeP5Btn"/>
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+
+        </ScrollView>
+
+
+        <Button
+            android:id="@+id/resoudre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:text="Résoudre"
+            android:textSize="20sp" />
+
+
+
+
+    </RelativeLayout>
+
