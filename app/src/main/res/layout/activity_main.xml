@@ -95,13 +95,13 @@
                         android:orientation="vertical"
                         android:layout_marginLeft="5dp">
                         <TextView
-                            android:id="@+id/debitMax1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:text="@string/debit_max"/>
 
                         <EditText
+                            android:id="@+id/debitMax1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
@@ -202,13 +202,13 @@
                         android:orientation="vertical"
                         android:layout_marginLeft="5dp">
                         <TextView
-                            android:id="@+id/debitMax2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:text="@string/debit_max"/>
 
                         <EditText
+                            android:id="@+id/debitMax2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
@@ -310,13 +310,13 @@
                         android:orientation="vertical"
                         android:layout_marginLeft="5dp">
                         <TextView
-                            android:id="@+id/debitMax3"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:text="@string/debit_max"/>
 
                         <EditText
+                            android:id="@+id/debitMax3"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
@@ -417,13 +417,13 @@
                         android:orientation="vertical"
                         android:layout_marginLeft="5dp">
                         <TextView
-                            android:id="@+id/debitMax4"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:text="@string/debit_max"/>
 
                         <EditText
+                            android:id="@+id/debitMax4"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
@@ -524,13 +524,13 @@
                         android:orientation="vertical"
                         android:layout_marginLeft="5dp">
                         <TextView
-                            android:id="@+id/debitMax5"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:text="@string/debit_max"/>
 
                         <EditText
+                            android:id="@+id/debitMax5"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"

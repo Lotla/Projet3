@@ -5,12 +5,16 @@ import java.util.List;
 
 import static java.lang.Math.pow;
 
-public abstract class Turbine {
+public class Turbine {
 
     public List<List<Double>> FN = new ArrayList<>();
     public List<Double> puissance = new ArrayList<>();
     public List<Double> F_N = new ArrayList<>();
     public List<Integer> X_n = new ArrayList<>();
+
+    public Turbine(){
+
+    }
 
 
 
@@ -27,4 +31,5 @@ public abstract class Turbine {
         return elevation_amont - CalculElevation_aval_en_fonction_du_debit_total(Qtot) - 0.5*pow(10,-5)*pow(Sn,2);    //Eam-Eav(Qtot)-0.5e^-5*Q^2
 
     }
+
 }
