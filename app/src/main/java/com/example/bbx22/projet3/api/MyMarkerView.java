@@ -1,9 +1,10 @@
-package com.example.bbx22.projet3;
+package com.example.bbx22.projet3.api;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.widget.TextView;
 
+import com.example.bbx22.projet3.R;
 import com.github.mikephil.charting.components.MarkerView;
 import com.github.mikephil.charting.data.CandleEntry;
 import com.github.mikephil.charting.data.Entry;

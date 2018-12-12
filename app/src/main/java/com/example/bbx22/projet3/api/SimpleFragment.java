@@ -1,4 +1,4 @@
-package com.example.bbx22.projet3;
+package com.example.bbx22.projet3.api;
 
 
 import android.content.Context;

@@ -1,6 +1,5 @@
 package com.example.bbx22.projet3;
 
-import android.content.Context;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
@@ -15,6 +14,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
+import com.example.bbx22.projet3.api.MyMarkerView;
+import com.example.bbx22.projet3.api.SimpleFragment;
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.components.Legend;
 import com.github.mikephil.charting.components.XAxis;
